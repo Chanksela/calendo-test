@@ -21,10 +21,7 @@ export default function CircleButton({ type }) {
 	}
 
 	return (
-		<div
-			className="rounded-circle shadow d-flex justify-content-center align-items-center icon-container"
-			style={{ width: "32px", height: "32px" }}
-		>
+		<div className="rounded-circle d-flex justify-content-center align-items-center icon-container">
 			<img src={icon} alt={`${type} icon`} />
 		</div>
 	);

@@ -1,5 +1,6 @@
 import CircleButton from "../ui/circleButton";
 import logo from "../../assets/logo.svg";
+import Steps from "./Steps";
 export default function Header() {
 	return (
 		<section>
@@ -10,7 +11,7 @@ export default function Header() {
 				</div>
 				<CircleButton type="close" />
 			</div>
-			<div></div>
+			<Steps />
 		</section>
 	);
 }
