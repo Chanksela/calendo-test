@@ -1,0 +1,31 @@
+import closeIcon from "../../assets/icons/close.svg";
+import forwardIcon from "../../assets/icons/right-arrow.svg";
+import backIcon from "../../assets/icons/left-arrow.svg";
+
+export default function CircleButton({ type }) {
+	let icon;
+
+	switch (type) {
+		case "close":
+			icon = closeIcon;
+			break;
+		case "forward":
+			icon = forwardIcon;
+			break;
+		case "back":
+			icon = backIcon;
+			break;
+		default:
+			icon = null;
+			break;
+	}
+
+	return (
+		<div
+			className="rounded-circle shadow d-flex justify-content-center align-items-center icon-container"
+			style={{ width: "32px", height: "32px" }}
+		>
+			<img src={icon} alt={`${type} icon`} />
+		</div>
+	);
+}

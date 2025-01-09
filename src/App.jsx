@@ -1,5 +1,9 @@
-function App() {
-	return <div>Hello World</div>;
-}
+import Header from "./components/calendar/Header";
 
-export default App;
+export default function App() {
+	return (
+		<div className="mx-3 mt-2">
+			<Header />
+		</div>
+	);
+}

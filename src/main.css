@@ -1,0 +1,5 @@
+.icon-container:hover {
+	box-shadow: 0 4px 8px rgba(26, 25, 25, 0.8) !important;
+	transition: all 0.4s ease !important;
+	cursor: pointer;
+}
