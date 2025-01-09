@@ -2,12 +2,15 @@ import CircleButton from "../ui/circleButton";
 import logo from "../../assets/logo.svg";
 export default function Header() {
 	return (
-		<section className="d-flex justify-content-between align-items-center">
-			<CircleButton buttonType="back" />
-			<div>
-				<img src={logo} alt="" />
+		<section>
+			<div className="d-flex justify-content-between align-items-center">
+				<CircleButton type="back" />
+				<div>
+					<img src={logo} alt="" />
+				</div>
+				<CircleButton type="close" />
 			</div>
-			<CircleButton buttonType="close" />
+			<div></div>
 		</section>
 	);
 }
