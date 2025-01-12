@@ -7,3 +7,19 @@
 	width: 32px;
 	height: 32px;
 }
+.btn-day {
+	width: 52px;
+	font-size: 12px;
+	height: 55px;
+}
+.btn-day:hover {
+	background-color: #7c1fd1;
+	color: white;
+}
+.btn-day-active {
+	background-color: #7c1fd1 !important;
+	color: white;
+}
+.day-date {
+	font-size: 14px;
+}
