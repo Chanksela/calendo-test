@@ -38,30 +38,33 @@ export default function PickHour() {
 	};
 
 	return (
-		<div className="container mt-4">
-			{chunkedTimeSlots.map((row, rowIndex) => {
-				return (
-					<div
-						key={rowIndex}
-						className="row d-flex justify-content-between align-items-center"
-					>
-						{row.map((time, index) => {
-							return (
-								<button
-									className={`col-2 mb-4 btn-hour d-flex flex-column justify-content-center align-items-center ${
-										selectedHours.includes(time.id) ? "btn-hour-active" : ""
-									}`}
-									key={index}
-									onClick={() => selectHours(time.id)}
-								>
-									<span className="fw-semibold">{time.time}</span>
-									<span>{time.date}</span>
-								</button>
-							);
-						})}
-					</div>
-				);
-			})}
-		</div>
+		<>
+			<div className="container mt-4">
+				{chunkedTimeSlots.map((row, rowIndex) => {
+					return (
+						<div
+							key={rowIndex}
+							className="row d-flex justify-content-between align-items-center"
+						>
+							{row.map((time, index) => {
+								return (
+									<button
+										className={`col-2 mb-4 btn-hour d-flex flex-column justify-content-center align-items-center ${
+											selectedHours.includes(time.id) ? "btn-hour-active" : ""
+										}`}
+										key={index}
+										onClick={() => selectHours(time.id)}
+									>
+										<span className="fw-semibold">{time.time}</span>
+										<span>{time.date}</span>
+									</button>
+								);
+							})}
+						</div>
+					);
+				})}
+			</div>
+			<button className="w-100 btn-main mt-auto mb-3">გაგრძელება</button>
+		</>
 	);
 }

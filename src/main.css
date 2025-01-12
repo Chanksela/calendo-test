@@ -51,3 +51,16 @@
 	pointer-events: none !important;
 	border: none !important;
 }
+.btn-main {
+	padding: 10px 16px;
+	border-radius: 15px;
+	background-color: #7c1fd1;
+	color: white;
+	border: 1px solid #7c1fd1;
+}
+
+.nav-wrapper:hover {
+	color: black !important;
+	cursor: pointer;
+	font-weight: 800;
+}
