@@ -23,3 +23,31 @@
 .day-date {
 	font-size: 14px;
 }
+
+.btn-hour {
+	width: 64px !important;
+	height: 51px !important;
+	border: 1px solid #d9d9d9 !important;
+	border-radius: 15px;
+	background-color: transparent;
+}
+.btn-hour span:nth-of-type(2) {
+	color: gray;
+}
+
+.btn-hour:hover span:nth-of-type(2),
+.btn-hour.btn-hour-active span:nth-of-type(2) {
+	color: white;
+}
+
+.btn-hour:hover,
+.btn-hour-active {
+	transition: 0.5s;
+	background-color: black;
+	color: white;
+}
+.btn-disabled {
+	background-color: #f1f5f9 !important;
+	pointer-events: none !important;
+	border: none !important;
+}

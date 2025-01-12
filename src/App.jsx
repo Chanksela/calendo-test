@@ -1,12 +1,14 @@
 import Header from "./components/calendar/Header";
 import PickDate from "./components/calendar/PickDate";
 import PickDay from "./components/calendar/PickDay";
+import PickHour from "./components/calendar/PickHour";
 export default function App() {
 	return (
 		<div className="mx-3 mt-2">
 			<Header />
 			<PickDate />
 			<PickDay />
+			<PickHour />
 		</div>
 	);
 }

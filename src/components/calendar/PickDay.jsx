@@ -1,15 +1,7 @@
 import { useState } from "react";
+import { daysData } from "../../data/data";
 
 export default function PickDay() {
-	const daysData = [
-		{ day: "ორშ", date: 12 },
-		{ day: "სამ", date: 13 },
-		{ day: "ოთხ", date: 14 },
-		{ day: "ხუთ", date: 15 },
-		{ day: "პარ", date: 16 },
-		{ day: "შაბ", date: 17 },
-	];
-
 	const [isActive, setIsActive] = useState(null);
 	const setIsActiveDay = (index) => {
 		setIsActive(index === isActive ? null : index);
