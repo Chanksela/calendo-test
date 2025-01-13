@@ -1,8 +1,10 @@
-# React + Vite
+# Calendo დავალება
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+დავალება გაკეთებულია კომპანია calendo-ს ვაკანსიის ტესტისთვის.
 
-Currently, two official plugins are available:
+ფიგმას დიზაინი: https://www.figma.com/design/9CjYKkmDarTx7fCTh5z3Po/Untitled?node-id=1-4920&t=kXrAeXRHHopE2tcc-0
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+გამოყენებული ტექი:
+
+- React
+- Bootstrap 5
