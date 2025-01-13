@@ -1,8 +1,9 @@
 import closeIcon from "../../assets/icons/close.svg";
 import forwardIcon from "../../assets/icons/right-arrow.svg";
+
 import backIcon from "../../assets/icons/left-arrow.svg";
 
-export default function CircleButton({ type }) {
+export default function CircleButton({ type, onClick }) {
 	let icon;
 
 	switch (type) {
@@ -21,7 +22,10 @@ export default function CircleButton({ type }) {
 	}
 
 	return (
-		<div className="rounded-circle d-flex justify-content-center align-items-center icon-container">
+		<div
+			onClick={onClick}
+			className="rounded-circle d-flex justify-content-center align-items-center icon-container"
+		>
 			<img src={icon} alt={`${type} icon`} />
 		</div>
 	);

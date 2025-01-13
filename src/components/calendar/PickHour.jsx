@@ -1,4 +1,6 @@
-import { useState } from "react";
+// import { useState } from "react";
+import useSelectedItems from "../../hooks/useSelectedItems";
+import MainButton from "../ui/mainButton";
 import { timeSlots } from "../../data/data";
 
 const chunkedTimeSlots = [];
@@ -11,32 +13,7 @@ for (let i = 0; i < timeSlots.length; i += 5) {
 }
 
 export default function PickHour() {
-	const [selectedHours, setSelectedHours] = useState([]);
-	// სათების არჩევის ლოგიკა
-	const selectHours = (id) => {
-		let refreshedSelectedHours = [...selectedHours];
-		// თუ დრო უკვე არჩეულია, გაფილტრე
-		if (refreshedSelectedHours.includes(id)) {
-			console.log("includes");
-			refreshedSelectedHours = refreshedSelectedHours.filter(
-				(hours) => hours !== id
-			);
-		} else {
-			// თუ ორზე ნაკლები დროა დაამატე ახალი
-			if (refreshedSelectedHours.length < 2) {
-				refreshedSelectedHours.push(id);
-			} else {
-				// თუ უკვე ორი დროა, ყველაძე ძველი ამოიღე და ახალი დაამატე.
-				refreshedSelectedHours.shift();
-				refreshedSelectedHours.push(id);
-			}
-		}
-
-		// განაახლე სტეიტი
-		setSelectedHours(refreshedSelectedHours);
-		console.log(refreshedSelectedHours);
-	};
-
+	const { array, handleSelectingItems } = useSelectedItems(2);
 	return (
 		<>
 			<div className="container mt-4">
@@ -50,10 +27,10 @@ export default function PickHour() {
 								return (
 									<button
 										className={`col-2 mb-4 btn-hour d-flex flex-column justify-content-center align-items-center ${
-											selectedHours.includes(time.id) ? "btn-hour-active" : ""
+											array.includes(time.id) ? "btn-hour-active" : ""
 										}`}
 										key={index}
-										onClick={() => selectHours(time.id)}
+										onClick={() => handleSelectingItems(time.id)}
 									>
 										<span className="fw-semibold">{time.time}</span>
 										<span>{time.date}</span>
@@ -64,7 +41,7 @@ export default function PickHour() {
 					);
 				})}
 			</div>
-			<button className="w-100 btn-main mt-auto mb-3">გაგრძელება</button>
+			<MainButton text="გაგრძელება" />
 		</>
 	);
 }
