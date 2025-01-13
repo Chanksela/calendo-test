@@ -1,29 +1,38 @@
-import HomeIcon from "../../assets/icons/home.svg";
-import ActivityIcon from "../../assets/icons/activity.svg";
-import ProfileIcon from "../../assets/icons/profile.svg";
+import HomeIcon from "../../assets/icons/HomeIcon";
+import ActivityIcon from "../../assets/icons/ActivityIcon";
+import ProfileIcon from "../../assets/icons/ProfileIcon";
+import { useState } from "react";
+
 export default function NavWrapper({ text }) {
-	let logo;
+	const [isHovered, setIsHovered] = useState(false);
+
+	const handleMouseEnter = () => setIsHovered(true);
+	const handleMouseLeave = () => setIsHovered(false);
+
+	let IconComponent;
+
 	switch (text) {
 		case "მთავარი":
-			logo = HomeIcon;
-
+			IconComponent = HomeIcon;
 			break;
 		case "აქტივობები":
-			logo = ActivityIcon;
-
+			IconComponent = ActivityIcon;
 			break;
 		case "პროფილი":
-			logo = ProfileIcon;
-
+			IconComponent = ProfileIcon;
 			break;
 		default:
+			IconComponent = null;
 			break;
 	}
+
 	return (
-		<div className="col-4 d-flex flex-column justify-content-center align-items-center nav-wrapper">
-			<div>
-				<img src={logo} alt={text} />
-			</div>
+		<div
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
+			className="col-4 d-flex flex-column justify-content-center align-items-center nav-wrapper"
+		>
+			<div>{IconComponent && <IconComponent isHovered={isHovered} />}</div>
 			<p>{text}</p>
 		</div>
 	);
