@@ -76,7 +76,7 @@
 
 .custom-modal {
 	position: fixed;
-	margin: 0px 18px 10px 18px;
+	margin: 0px 18px -10px 18px;
 	bottom: 0;
 	left: 0;
 	width: calc(100% - 36px);
@@ -89,6 +89,7 @@
 }
 
 .custom-modal.show {
+	margin-bottom: 10px;
 	transform: translateY(0);
 }
 
